@@ -1,0 +1,1811 @@
+ <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title></title>
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css"/>
+  <link media="screen and (min-width:992px)" rel="stylesheet" href="css/pc.css"/>
+  <link media="screen and (min-width:768px) and (max-width:991px)" rel="stylesheet" href="css/pad.css"/>
+  <link media="screen and (max-width:767px)" rel="stylesheet" href="css/phone.css"/>
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <!--[if lt IE 9]>
+  <!--<script src="js/html5shiv.min.js"></script>-->
+  <!--<script src="js/respond.min.js"></script>-->
+  <!--<![endif]-->
+  <style>
+    .screen{
+      /*display: none;*/
+    }
+    .cart{
+      float: left;
+      margin:35px;
+    }
+    .cart p {
+      font-size: 18px;
+    }
+    .cart input[type=checkbox]{
+      width: 20px;
+      height: 20px;
+      vertical-align:middle;
+    }
+    .gengduo{
+      text-align: center;
+      font-size: 28px;
+    }
+    .shuiyong{
+      font-size: 20px;
+    }
+    .screenStyle{
+      display: none;
+    }
+    .cart label{
+      display: block;
+      text-align: left;
+    }
+    .cart>p{
+      text-align: left;
+    }
+    
+
+  </style>
+</head>
+<body>
+  <div id="header-box"></div>
+  <div id="showPage">
+    <!--车型下拉-->
+    <div class="container">
+      <div class="panel-group" id="pgroup">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <a href="#VehicaleType" data-toggle="collapse" data-parent="#pgroup"><h4>筛选标准:</h4></a>
+          </div>
+          <div class="pager screen screenStyle">
+            <div class="cart">
+              <p>车型</p>
+              <label>
+                <input type="checkbox" v-model="carType" value="718" @click="selectChange()"/>
+                <span>718</span>
+              </label>
+              <label>
+                <input type="checkbox" v-model="carType" value="911" @click="selectChange()"/>
+                <span>911</span>
+              </label>
+              <label>
+                <input type="checkbox" v-model="carType" value="Panamera" @click="selectChange()"/>
+                <span>Panamera</span>
+              </label>
+              <label>
+                <input type="checkbox" v-model="carType" value="Macan" @click="selectChange()"/>
+                <span>Macan</span>
+              </label>
+              <label>
+                <input type="checkbox" v-model="carType" value="Cayenne" @click="selectChange()"/>
+                <span>Cayenne</span>
+              </label>
+            </div>
+            <div class="cart">
+              <p>车身设计</p>
+              <label>
+                <input type="checkbox" v-model="bodyDes" value="hTop" @click="selectChange()"/>
+                <span>硬顶</span>
+              </label>
+              <label>
+                <input type="checkbox" v-model="bodyDes" value="cTop" @click="selectChange()"/>
+                <span>敞篷</span>
+              </label>
+              <label>
+                <input type="checkbox" v-model="bodyDes" value="SUV" @click="selectChange()"/>
+                <span>SUV</span>
+              </label>
+              <label>
+                <input type="checkbox" v-model="bodyDes" value="granTurismo" @click="selectChange()"/>
+                <span>Gran Turismo</span>
+              </label>
+              <label>
+                <input type="checkbox" v-model="bodyDes" value="sportTurismo" @click="selectChange()"/>
+                <span>Sport Turismo</span>
+              </label>
+            </div>
+            <div class="cart">
+              <p>变速箱</p>
+              <label>
+                <input type="checkbox" v-model="gearBox" value="stickShift" @click="selectChange()"/>
+                <span>手动</span>
+              </label>
+              <label>
+                <input type="checkbox" v-model="gearBox" value="tiptronic" @click="selectChange()"/>
+                <span>Tiptronic</span>
+              </label>
+              <label>
+                <input type="checkbox" v-model="gearBox" value="PDK" @click="selectChange()"/>
+                <span>PDK</span>
+              </label>
+            </div>
+            <div class="cart">
+              <p>座位</p>
+              <label>
+                <input type="checkbox" v-model="seatNum" value="seat2" @click="selectChange()"/>
+                <span>2</span>
+              </label>
+              <label>
+                <input type="checkbox" v-model="seatNum" value="seat4" @click="selectChange()"/>
+                <span>4</span>
+              </label>
+              <label>
+                <input type="checkbox" v-model="seatNum" value="seat4_1" @click="selectChange()"/>
+                <span>4+1</span>
+              </label>
+              <label>
+                <input type="checkbox" v-model="seatNum" value="seat5" @click="selectChange()"/>
+                <span>5</span>
+              </label>
+            </div>
+            <div class="cart">
+              <p>驱动系统</p>
+              <label>
+                <input type="checkbox" v-model="driveTrain" value="rearWheel" @click="selectChange()"/>
+                <span>后轮驱动</span>
+              </label>
+              <label>
+                <input type="checkbox" v-model="driveTrain" value="fourWheel" @click="selectChange()"/>
+                <span>四轮驱动</span>
+              </label>
+            </div>
+            <div class="cart">
+              <p>燃油类型</p>
+              <label>
+                <input type="checkbox" v-model="fuelType" value="gasoline" @click="selectChange()"/>
+                <span>汽油</span>
+              </label>
+              <label>
+                <input type="checkbox" v-model="fuelType" value="HEV" @click="selectChange()"/>
+                <span>混合动力</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--718 Cayman 车型-->
+    <div v-if="showAll || this.showCarTypeList['718Cayman']" class="container">
+      <h1><span class="glyphicon glyphicon-menu-right"></span>718 Cayman 车型</h1>
+      <div class="row">
+        <div v-if="showAll || this.showList._718Cayman_1" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite.jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+        <div v-if="showAll || this.showList._718Cayman_2" class="col-md-3 col-sm-4 col-xs-6" v-if="showAll || this.showList._718Cayman_2">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite (1).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!--718 Boxster 车型-->
+    <div v-if="showAll || this.showCarTypeList['718Boxster']"  class="container">
+      <h1><span class="glyphicon glyphicon-menu-right"></span>718 Boxster 车型</h1>
+      <div class="row">
+        <div v-if="showAll || this.showList._718Boxster_1" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(2).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+        <div v-if="showAll || this.showList._718Boxster_2" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(3).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!--911 Carrera 车型-->
+    <div v-if="showAll || this.showCarTypeList['911Carrera']" class="container">
+      <h1><span class="glyphicon glyphicon-menu-right"></span>911 Carrera 车型</h1>
+      <div class="row">
+        <div v-if="showAll || this.showList._911Carrera_1" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(4).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+        <div v-if="showAll || this.showList._911Carrera_2" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(5).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+        <div v-if="showAll || this.showList._911Carrera_3" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(6).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+        <div v-if="showAll || this.showList._911Carrera_4" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(7).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+        <div v-if="showAll || this.showList._911Carrera_5" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(8).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+        <div v-if="showAll || this.showList._911Carrera_6" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(9).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+        <div v-if="showAll || this.showList._911Carrera_7" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(10).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+        <div v-if="showAll || this.showList._911Carrera_8" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(11).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!--911 Targa 4 车型-->
+    <div v-if="showAll || this.showCarTypeList['911Targa4']" class="container">
+      <h1><span class="glyphicon glyphicon-menu-right"></span>911 Targa 4 车型</h1>
+      <div class="row">
+        <div v-if="showAll || this.showList._911Targa4_1" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(12).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+        <div v-if="showAll || this.showList._911Targa4_2" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(13).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!--911 Turbo 车型-->
+    <div v-if="showAll || this.showCarTypeList['911Turbo']" class="container">
+      <h1><span class="glyphicon glyphicon-menu-right"></span>911 Turbo 车型</h1>
+      <div class="row">
+        <div v-if="showAll || this.showList._911Turbo_1" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(14).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+        <div v-if="showAll || this.showList._911Turbo_2" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(15).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+        <div v-if="showAll || this.showList._911Turbo_3" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(16).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+        <div v-if="showAll || this.showList._911Turbo_4" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(17).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!--911 Turbo S Exclusive Series-->
+    <div v-if="showAll || this.showCarTypeList['911Turbo_S']" class="container">
+      <h1><span class="glyphicon glyphicon-menu-right"></span>911 Turbo S Exclusive Series</h1>
+      <div class="row">
+        <div v-if="showAll || this.showList._911Turbo_S_Exclusuve" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(18).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!--911 GTS 车型-->
+    <div v-if="showAll || this.showCarTypeList['911GTS']" class="container">
+      <h1><span class="glyphicon glyphicon-menu-right"></span>911 GTS 车型</h1>
+      <div class="row">
+        <div v-if="showAll || this.showList._911GTS_1" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(19).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+        <div v-if="showAll || this.showList._911GTS_2" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(20).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+        <div v-if="showAll || this.showList._911GTS_3" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(21).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+        <div v-if="showAll || this.showList._911GTS_4" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(22).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+        <div v-if="showAll || this.showList._911GTS_5" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(23).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!--911 GT3 车型-->
+    <div v-if="showAll || this.showCarTypeList['911GT3']" class="container">
+      <h1><span class="glyphicon glyphicon-menu-right"></span>911 GT3 车型</h1>
+      <div class="row">
+        <div v-if="showAll || this.showList._911GT3_1" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(24).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+        <div v-if="showAll || this.showList._911GT3_2" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(25).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!--Panamera 车型-->
+    <div v-if="showAll || this.showCarTypeList['Panamera']" class="container">
+      <h1><span class="glyphicon glyphicon-menu-right"></span>Panamera 车型</h1>
+      <div class="row">
+        <div v-if="showAll || this.showList._Panamera_1" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(26).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+        <div v-if="showAll || this.showList._Panamera_2" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(27).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+        <div v-if="showAll || this.showList._Panamera_3" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(28).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+        <div v-if="showAll || this.showList._Panamera_4" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(29).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+        <div v-if="showAll || this.showList._Panamera_5" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(30).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+        <div v-if="showAll || this.showList._Panamera_6" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(31).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+        <div v-if="showAll || this.showList._Panamera_7" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(32).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!--Panamera E-Hybrid 车型-->
+    <div v-if="showAll || this.showCarTypeList['Panamera_E']" class="container">
+      <h1><span class="glyphicon glyphicon-menu-right"></span>Panamera E-Hybrid 车型</h1>
+      <div class="row">
+        <div v-if="showAll || this.showList._Panamera_E_Hybrid_1" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(33).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+        <div v-if="showAll || this.showList._Panamera_E_Hybrid_2" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(34).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+        <div v-if="showAll || this.showList._Panamera_E_Hybrid_3" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(35).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+        <div v-if="showAll || this.showList._Panamera_E_Hybrid_4" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(36).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!--Panamera Turbo 车型-->
+    <div v-if="showAll || this.showCarTypeList['Panamera_Turbo']" class="container">
+      <h1><span class="glyphicon glyphicon-menu-right"></span>Panamera Turbo 车型</h1>
+      <div class="row">
+        <div v-if="showAll || this.showList._Panamera_Turbo_1" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(37).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+        <div v-if="showAll || this.showList._Panamera_Turbo_2" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(38).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+        <div v-if="showAll || this.showList._Panamera_Turbo_3" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(39).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!--Macan 车型-->
+    <div v-if="showAll || this.showCarTypeList['Macan']" class="container" >
+      <h1><span class="glyphicon glyphicon-menu-right"></span>Macan 车型</h1>
+      <div class="row">
+        <div v-if="showAll || this.showList._Macan_1" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(40).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+        <div v-if="showAll || this.showList._Macan_2" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(41).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!--Macan GTS-->
+    <div v-if="showAll || this.showCarTypeList['Macan_GTS']" class="container" >
+      <h1><span class="glyphicon glyphicon-menu-right"></span>Macan GTS</h1>
+      <div class="row">
+        <div v-if="showAll || this.showList._Macan_GTS" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(42).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!--Macan Turbo 车型-->
+    <div v-if="showAll || this.showCarTypeList['Macan_Turbo']" class="container">
+      <h1><span class="glyphicon glyphicon-menu-right"></span>Macan Turbo 车型</h1>
+      <div class="row">
+        <div v-if="showAll || this.showList._Macan_Turbo_1" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(43).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+        <div v-if="showAll || this.showList._Macan_Turbo_2" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(44).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!--Cayenne 车型-->
+    <div v-if="showAll || this.showCarTypeList['Cayenne']" class="container" >
+      <h1><span class="glyphicon glyphicon-menu-right"></span>Cayenne 车型</h1>
+      <div class="row">
+        <div v-if="showAll || this.showList._Cayenne_1" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(45).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+        <div v-if="showAll || this.showList._Cayenne_2" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(46).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!--Cayenne Turbo-->
+    <div v-if="showAll || this.showCarTypeList['Cayenne_Turbo']" class="container">
+      <h1><span class="glyphicon glyphicon-menu-right"></span>Cayenne Turbo</h1>
+      <div class="row">
+        <div v-if="showAll || this.showList._Cayenne_Turbo" class="col-md-3 col-sm-4 col-xs-6">
+          <a href="#">
+            <div>
+              <img src="img/serch/porsche-thumbwhite(47).jpg" class="img-responsive"/>
+            </div>
+            <div>
+              <div>718 Cayman</div>
+              <div>588,000 元起 *</div>
+            </div>
+          </a>
+          <div class="row">
+            <div class="probe">
+              <a href="#"><span class="glyphicon glyphicon-menu-right"></span>探索</a>
+            </div>
+            <div class="nature">
+              <div class="nature1"><a href="#"><span class="glyphicon glyphicon-cog"></span>车辆配置器</a></div>
+              <div class="nature2"><a href="#"><span class="glyphicon glyphicon-resize-horizontal"></span>比较</a></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!--购车税用-->
+    <div class="container shuiyong">
+      <div class="row">
+        <div class="col-xs-12 col-md-8">
+          <p>
+            *  所列的制造商建议零售价（含增值税）仅供参考，并不包括运输费用
+            、税费（另有明确规定的除外）、牌照、所有权、非强制或地区性要求的设
+            备。特别是，制造商建议零售价（含增值税）并未包含 2016 年 12 月 1
+            日起生效的《财政部、国家税务总局关于对超豪华小汽车加征消费税有关事
+            项的通知》所要求加征的消费税。请向授权经销商咨询具体的价格信息。
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--更多-->
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 gengduo">
+          <p>更多</p>
+        </div>
+        <div class="col-xs-12 chexinggengduo">
+          <div class="row cxgd">
+            <div class="col-xs-12 col-sm-2"><a href="#">所有718车型</a></div>
+            <div class="col-xs-12 col-sm-2"><a href="#">911系列</a></div>
+            <div class="col-xs-12 col-sm-2"><a href="#">所有Panammera车型</a></div>
+            <div class="col-xs-12 col-sm-2"><a href="#">所有Macan车型</a></div>
+            <div class="col-xs-12 col-sm-2"><a href="#">所有Cayenne车型</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/vue.js"></script>
+  <script src="js/header.js"></script>
+  <script src="js/footer.js"></script>
+
+    <script>
+        let temp = [];
+        temp._718Cayman_1 = {
+            carType:'718',//车型             '718,911,Panamera,Macan,Cayenne'
+            bodyDes:'hTop',//车身设计         'hTop,cTop,SUV,granTurismo,sportTurismo'
+            gearBox:'stickShift',//变速箱     'stickShift,tiptronic,PDK'
+            seatNum:'seat2',//座位数          'seat2,seat4,seat4_1,seat5'
+            driveTrain:'rearWheel',//驱动系统  'rearWheel,fourWheel'
+            fuelType:'gasoline',//燃油类型    'gasoline,HEV'
+        };
+        temp._718Cayman_2 = {
+          carType:'718',
+          bodyDes:'hTop',
+          gearBox:'tiptronic',
+          seatNum:'seat2',
+          driveTrain:'fourWheel',
+            fuelType:'gasoline'
+        };
+        temp._718Boxster_1 = {
+          carType:'718',
+          bodyDes:'cTop',
+          gearBox:'PDK',
+          seatNum:'seat2',
+          driveTrain:'fourWheel',
+            fuelType:'gasoline'
+        };
+        temp._718Boxster_2 = {
+          carType:'718',
+          bodyDes:'cTop',
+          gearBox:'PDK',
+          seatNum:'seat2',
+          driveTrain:'rearWheel',
+            fuelType:'gasoline'
+        };
+        temp._911Carrera_1 = {
+          carType:'911',
+          bodyDes:'hTop',
+          gearBox:'tiptronic',
+          seatNum:'seat2',
+          driveTrain:'rearWheel',
+            fuelType:'gasoline'
+        };
+        temp._911Carrera_2 = {
+          carType:'911',
+          bodyDes:'hTop',
+          gearBox:'PDK',
+          seatNum:'seat2',
+          driveTrain:'rearWheel',
+            fuelType:'gasoline'
+        };
+        temp._911Carrera_3 = {
+          carType:'911',
+          bodyDes:'cTop',
+          gearBox:'stickShift',
+          seatNum:'seat4',
+          driveTrain:'rearWheel',
+            fuelType:'gasoline'
+        };
+        temp._911Carrera_4 = {
+          carType:'911',
+          bodyDes:'cTop',
+          gearBox:'tiptronic',
+          seatNum:'seat4',
+          driveTrain:'rearWheel',
+            fuelType:'HEV'
+        };
+        temp._911Carrera_5 = {
+          carType:'911',
+          bodyDes:'hTop',
+          gearBox:'tiptronic',
+          seatNum:'seat2',
+          driveTrain:'fourWheel',
+            fuelType:'gasoline'
+        };
+        temp._911Carrera_6 = {
+          carType:'911',
+          bodyDes:'hTop',
+          gearBox:'PDK',
+          seatNum:'seat2',
+          driveTrain:'fourWheel',
+            fuelType:'gasoline'
+        };
+        temp._911Carrera_7 = {
+          carType:'911',
+          bodyDes:'cTop',
+          gearBox:'tiptronic',
+          seatNum:'seat4',
+          driveTrain:'fourWheel',
+            fuelType:'gasoline'
+        };
+        temp._911Carrera_8 = {
+          carType:'911',
+          bodyDes:'cTop',
+          gearBox:'tiptronic',
+          seatNum:'seat4',
+          driveTrain:'fourWheel',
+            fuelType:'gasoline'
+        };
+        temp._911Targa4_1 = {
+          carType:'911',
+          bodyDes:'granTurismo',
+          gearBox:'PDK',
+          seatNum:'seat2',
+          driveTrain:'fourWheel',
+            fuelType:'HEV'
+        };
+        temp._911Targa4_2 = {
+          carType:'911',
+          bodyDes:'granTurismo',
+          gearBox:'tiptronic',
+          seatNum:'seat2',
+          driveTrain:'fourWheel',
+            fuelType:'gasoline'
+        };
+        temp._911Turbo_1 = {
+          carType:'911',
+          bodyDes:'hTop',
+          gearBox:'tiptronic',
+          seatNum:'seat4',
+          driveTrain:'rearWheel',
+            fuelType:'gasoline'
+        };
+        temp._911Turbo_2 = {
+          carType:'911',
+          bodyDes:'hTop',
+          gearBox:'PDK',
+          seatNum:'seat2',
+          driveTrain:'fourWheel',
+            fuelType:'gasoline'
+        };
+        temp._911Turbo_3 = {
+          carType:'911',
+          bodyDes:'hTop',
+          gearBox:'tiptronic',
+          seatNum:'seat4',
+          driveTrain:'rearWheel',
+            fuelType:'gasoline'
+        };
+        temp._911Turbo_4 = {
+          carType:'911',
+          bodyDes:'hTop',
+          gearBox:'PDK',
+          seatNum:'seat2',
+          driveTrain:'fourWheel',
+            fuelType:'gasoline'
+        };
+        temp._911Turbo_S_Exclusuve = {
+          carType:'911',
+          bodyDes:'granTurismo',
+          gearBox:'stickShift',
+          seatNum:'seat2',
+          driveTrain:'fourWheel',
+            fuelType:'HEV'
+        };
+        temp._911GTS_1 = {
+          carType:'911',
+          bodyDes:'granTurismo',
+          gearBox:'stickShift',
+          seatNum:'seat2',
+          driveTrain:'rearWheel',
+            fuelType:'gasoline'
+        };
+        temp._911GTS_2 = {
+          carType:'911',
+          bodyDes:'granTurismo',
+          gearBox:'tiptronic',
+          seatNum:'seat4',
+          driveTrain:'fourWheel',
+            fuelType:'HEV'
+        };
+        temp._911GTS_3 = {
+          carType:'911',
+          bodyDes:'granTurismo',
+          gearBox:'stickShift',
+          seatNum:'seat2',
+          driveTrain:'rearWheel',
+            fuelType:'gasoline'
+        };
+        temp._911GTS_4 = {
+          carType:'911',
+          bodyDes:'granTurismo',
+          gearBox:'tiptronic',
+          seatNum:'seat4',
+          driveTrain:'fourWheel',
+            fuelType:'HEV'
+        };
+        temp._911GTS_5 = {
+          carType:'911',
+          bodyDes:'granTurismo',
+          gearBox:'PDK',
+          seatNum:'seat2',
+          driveTrain:'fourWheel',
+            fuelType:'gasoline'
+        };
+        temp._911GT3_1 = {
+          carType:'911',
+          bodyDes:'granTurismo',
+          gearBox:'stickShift',
+          seatNum:'seat2',
+          driveTrain:'fourWheel',
+          fuelType:'gasoline'
+        };
+        temp._911GT3_2 = {
+          carType:'911',
+          bodyDes:'granTurismo',
+          gearBox:'tiptronic',
+          seatNum:'seat4',
+          driveTrain:'fourWheel',
+            fuelType:'HEV'
+        };
+        temp._Panamera_1 = {
+          carType:'Panamera',
+          bodyDes:'hTop',
+          gearBox:'tiptronic',
+          seatNum:'seat4',
+          driveTrain:'rearWheel',
+            fuelType:'gasoline'
+        };
+        temp._Panamera_2 = {
+          carType:'Panamera',
+          bodyDes:'hTop',
+          gearBox:'PDK',
+          seatNum:'seat4_1',
+          driveTrain:'fourWheel',
+            fuelType:'HEV'
+        };
+        temp._Panamera_3 = {
+          carType:'Panamera',
+          bodyDes:'hTop',
+          gearBox:'tiptronic',
+          seatNum:'seat4_1',
+          driveTrain:'fourWheel',
+            fuelType:'gasoline'
+        };
+        temp._Panamera_4 = {
+          carType:'Panamera',
+          bodyDes:'hTop',
+          gearBox:'PDK',
+          seatNum:'seat5',
+          driveTrain:'rearWheel',
+            fuelType:'gasoline'
+        };
+        temp._Panamera_5 = {
+          carType:'Panamera',
+          bodyDes:'hTop',
+          gearBox:'stickShift',
+          seatNum:'seat4',
+          driveTrain:'rearWheel',
+            fuelType:'gasoline'
+        };
+        temp._Panamera_6 = {
+          carType:'Panamera',
+          bodyDes:'hTop',
+          gearBox:'tiptronic',
+          seatNum:'seat4',
+          driveTrain:'fourWheel',
+            fuelType:'gasoline'
+        };
+        temp._Panamera_7 = {
+          carType:'Panamera',
+          bodyDes:'hTop',
+          gearBox:'stickShift',
+          seatNum:'seat4_1',
+          driveTrain:'rearWheel',
+            fuelType:'HEV'
+        };
+        temp._Panamera_E_Hybrid_1 = {
+          carType:'Panamera',
+          bodyDes:'hTop',
+          gearBox:'tiptronic',
+          seatNum:'seat4',
+          driveTrain:'rearWheel',
+            fuelType:'gasoline'
+        };
+        temp._Panamera_E_Hybrid_2 = {
+          carType:'Panamera',
+          bodyDes:'hTop',
+          gearBox:'PDK',
+          seatNum:'seat4',
+          driveTrain:'fourWheel',
+            fuelType:'gasoline'
+        };
+        temp._Panamera_E_Hybrid_3 = {
+          carType:'Panamera',
+          bodyDes:'hTop',
+          gearBox:'tiptronic',
+          seatNum:'seat5',
+          driveTrain:'rearWheel',
+            fuelType:'HEV'
+        };
+        temp._Panamera_E_Hybrid_4 = {
+          carType:'Panamera',
+          bodyDes:'hTop',
+          gearBox:'PDK',
+          seatNum:'seat4_1',
+          driveTrain:'fourWheel',
+            fuelType:'gasoline'
+        };
+        temp._Panamera_Turbo_1 = {
+          carType:'Panamera',
+          bodyDes:'sportTurismo',
+          gearBox:'stickShift',
+          seatNum:'seat4',
+          driveTrain:'rearWheel',
+            fuelType:'gasoline'
+        };
+        temp._Panamera_Turbo_2 = {
+          carType:'Panamera',
+          bodyDes:'sportTurismo',
+          gearBox:'tiptronic',
+          seatNum:'seat4_1',
+          driveTrain:'fourWheel',
+            fuelType:'gasoline'
+        };
+        temp._Panamera_Turbo_3 = {
+          carType:'Panamera',
+          bodyDes:'sportTurismo',
+          gearBox:'PDK',
+          seatNum:'seat5',
+          driveTrain:'fourWheel',
+            fuelType:'HEV'
+        };
+        temp._Macan_1 = {
+          carType:'Macan',
+          bodyDes:'SUV',
+          gearBox:'tiptronic',
+          seatNum:'seat4_1',
+          driveTrain:'fourWheel',
+          fuelType:'gasoline'
+        };
+        temp._Macan_2 = {
+          carType:'Macan',
+          bodyDes:'SUV',
+          gearBox:'PDK',
+          seatNum:'seat5',
+          driveTrain:'fourWheel',
+          fuelType:'HEV'
+        };
+        temp._Macan_GTS = {
+          carType:'Macan',
+          bodyDes:'SUV',
+          gearBox:'tiptronic',
+          seatNum:'seat4_1',
+          driveTrain:'fourWheel',
+          fuelType:'gasoline'
+        };
+        temp._Macan_Turbo_1 = {
+          carType:'Macan',
+          bodyDes:'SUV',
+          gearBox:'PDK',
+          seatNum:'seat4_1',
+          driveTrain:'rearWheel',
+          fuelType:'gasoline'
+        };
+        temp._Macan_Turbo_2 = {
+          carType:'Macan',
+          bodyDes:'SUV',
+          gearBox:'PDK',
+          seatNum:'seat5',
+          driveTrain:'fourWheel',
+          fuelType:'gasoline'
+        };
+        temp._Cayenne_1 = {
+          carType:'Cayenne',
+          bodyDes:'SUV',
+          gearBox:'tiptronic',
+          seatNum:'seat5',
+          driveTrain:'rearWheel',
+          fuelType:'gasoline'
+        };
+        temp._Cayenne_2 = {
+          carType:'Cayenne',
+          bodyDes:'SUV',
+          gearBox:'tiptronic',
+          seatNum:'seat4_1',
+          driveTrain:'fourWheel',
+          fuelType:'gasoline'
+        };
+        temp._Cayenne_Turbo = {
+          carType:'Cayenne',
+          bodyDes:'SUV',
+          gearBox:'PDK',
+          seatNum:'seat5',
+          driveTrain:'fourWheel',
+          fuelType:'HEV'
+        };
+
+  
+
+        new Vue({
+            el:'#showPage',
+            data:{
+
+                allCarAtr:[],
+
+                showList:[],
+                showCarTypeList:[],
+
+                showAll:true,
+
+                carType:[],//车型
+                bodyDes:[],//车身设计
+                gearBox:[],//变速箱
+                seatNum:[],//座位数
+                driveTrain:[],//驱动系统
+                fuelType:[],//燃油类型
+
+
+            },
+            mounted(){
+                $('.panel-heading').on('click',function(){
+                    // if($(this).next())
+                    if($(this).next().attr('class') == 'pager screen screenStyle'){
+                        $(this).next().removeClass('screenStyle');
+                    }else{
+                        $(this).next().addClass('screenStyle')
+                    }
+                });
+                
+                //初始化所有车型属性数组
+                this.allCarAtr = temp;
+            },
+            computed:{
+                carTypeStr:function () {
+                    let str = this.carType.join(',');
+                    if(str == '')
+                        str = '718,911,Panamera,Macan,Cayenne';
+                    return str;
+                },
+                bodyDesStr:function () {
+                    let str = this.bodyDes.join(',');
+                    if(str == '')
+                        str = 'hTop,cTop,SUV,granTurismo,sportTurismo';
+                    return str;
+                },
+                gearBoxStr:function () {
+                    let str = this.gearBox.join(',');
+                    if(str == '')
+                        str = 'stickShift,tiptronic,PDK';
+                    return str;
+                },
+                seatNumStr:function () {
+                    let str = this.seatNum.join(',');
+                    if(str == '')
+                        str = 'seat2,seat4,seat4_1,seat5';
+                    return str;
+                },
+                driveTrainStr:function () {
+                    let str = this.driveTrain.join(',');
+                    if(str == '')
+                        str = 'rearWheel,fourWheel';
+                    return str;
+                },
+                fuelTypeStr:function () {
+                    let str = this.fuelType.join(',');
+                    if(str == '')
+                        str = 'gasoline,HEV';
+                    return str;
+                },
+            },
+            methods:{
+                selectChange:function () {
+                    this.showAll = !(this.carTypeStr ||
+                                            this.bodyDesStr ||
+                                            this.gearBoxStr ||
+                                            this.seatNumStr ||
+                                            this.driveTrainStr ||
+                                            this.fuelTypeStr);
+                    this.showCarTypeList = [];
+                    for(i in this.allCarAtr) {
+                        let res = (this.carTypeStr.search(this.allCarAtr[i].carType) != -1 &&
+                                    this.bodyDesStr.search(this.allCarAtr[i].bodyDes) != -1 &&
+                                    this.gearBoxStr.search(this.allCarAtr[i].gearBox) != -1 &&
+                                    this.seatNumStr.search(this.allCarAtr[i].seatNum) != -1 &&
+                                    this.driveTrainStr.search(this.allCarAtr[i].driveTrain) != -1 &&
+                                    this.fuelTypeStr.search(this.allCarAtr[i].fuelType) != -1);
+
+                        if (res) {
+                            Vue.set(this.showList, i, true);
+                            
+                            if(i.search('718Cayman') != -1) 
+                                Vue.set(this.showCarTypeList,'718Cayman',true);
+                            else if(i.search('718Boxster') != -1)
+                                Vue.set(this.showCarTypeList,'718Boxster',true);
+                            else if(i.search('911Carrera') != -1)
+                                Vue.set(this.showCarTypeList,'911Carrera',true);
+                            else if(i.search('911Targa4') != -1)
+                                Vue.set(this.showCarTypeList,'911Targa4',true);
+                            else if(i.search('911Turbo') != -1)
+                                Vue.set(this.showCarTypeList,'911Turbo',true);
+                            else if(i.search('911Turbo_S') != -1)
+                                Vue.set(this.showCarTypeList,'911Turbo_S',true);
+                            else if(i.search('911GTS') != -1)
+                                Vue.set(this.showCarTypeList,'911GTS',true);
+                            else if(i.search('911GT3') != -1)
+                                Vue.set(this.showCarTypeList,'911GT3',true);
+                            else if(i.search('Panamera') != -1)
+                                Vue.set(this.showCarTypeList,'Panamera',true);
+                            else if(i.search('Panamera_E') != -1)
+                                Vue.set(this.showCarTypeList,'Panamera_E',true);
+                            else if(i.search('Panamera_Turbo') != -1)
+                                Vue.set(this.showCarTypeList,'Panamera_Turbo',true);
+                            else if(i.search('Macan') != -1)
+                                Vue.set(this.showCarTypeList,'Macan',true);
+                            else if(i.search('Macan_GTS') != -1)
+                                Vue.set(this.showCarTypeList,'Macan_GTS',true);
+                            else if(i.search('Macan_Turbo') != -1)
+                                Vue.set(this.showCarTypeList,'Macan_Turbo',true);
+                            else if(i.search('Cayenne') != -1)
+                                Vue.set(this.showCarTypeList,'Cayenne',true);
+                            else if(i.search('Cayenne_Turbo') != -1)
+                                Vue.set(this.showCarTypeList,'Cayenne_Turbo',true);
+                          
+                        } else {
+                            Vue.set(this.showList, i, false);
+                        }
+                    }
+                    console.log(this.showCarTypeList);
+                    
+                }
+            }
+        })
+    </script>
+</body>
+</html>
+
+

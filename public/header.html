@@ -1,0 +1,169 @@
+
+    <div class="header">
+        <div class="f1-box">
+            <div class="logo">
+                <img src="img/logo.png" alt="">
+                <!--<span>1111111111</span>-->
+            </div>
+        </div>
+    </div>
+    <div class="nav" id="nav">
+        <ul class="ulbox" >
+            <!--所有车型-->
+            <li class="dropD"><a href="serch.html">所有车型</a>
+                <span>|</span>
+                <car-type-list :lists="lists" @detail-hover="initDetail" @clear-detail="clearDetail"></car-type-list>
+                <type-detial :detail="detail" ></type-detial>
+            </li>
+
+            <!--<li><span>|</span></li>-->
+            <!--菜单-->
+            <a href="#" class="cd">菜单</a>
+            <!-- 易手车 -->
+            <li class="dropD">
+                <a data-trigger="dropD" href="approvedused.html">保时捷认可易手车</a>
+                <ul class="dropD-menu">
+                    <li>
+                        <div class="sj"></div>
+                        <a href="#">保时捷全球易手车展示平台</a>
+                    </li>
+                    <li>
+                        <a href="#">Porsche Approved</a>
+                    </li>
+                </ul>
+            </li>
+            <!-- 赛程 & 活动 -->
+            <li class="dropD">
+                <a data-trigger="dropD" href="motorsportandevents.html">赛程 &nbsp;& &nbsp;活动</a>
+                <ul class="dropD-menu">
+                    <li>
+                        <div class="sj"></div>
+                        <a href="live.html">保时捷活动</a>
+                    </li>
+                    <li>
+                        <a href="#">Porsche Racing Experience</a>
+                    </li>
+                    <li>
+                        <a href="#">保时捷驾驶体验</a>
+                    </li>
+                    <li>
+                        <a href="#">保时捷中国车主俱乐部</a>
+                    </li>
+                    <li>
+                        <a href="#">保时捷高尔夫巡回赛</a>
+                    </li>
+                    <li>
+                        <a href="#">Porsche Golf</a>
+                    </li>
+                </ul>
+            </li>
+            <!-- 个性化服务 -->
+
+            <li class="dropD">
+                <a data-trigger="dropD" href="accessoriesandservice.html">个性化与服务</a>
+                <ul class="dropD-menu">
+                    <li>
+                        <div class="sj"></div>
+                        <a href="#">Porsche Exclusive Manufaktur</a>
+                    </li>
+                    <li>
+                        <a href="#">保时捷智慧互联</a>
+                    </li>
+                    <li>
+                        <a href="#">保时捷原厂精装配件</a>
+                    </li>
+                    <li>
+                        <a href="#">官方授权的保时捷中心</a>
+                    </li>
+                    <li>
+                        <a href="#">保时捷车主精品</a>
+                    </li>
+                    <li>
+                        <a href="#">保时捷金融服务</a>
+                    </li>
+                    <li>
+                        <a href="#">保时捷救援</a>
+                    </li>
+                    <li>
+                        <a href="#">保时捷服务</a>
+                    </li>
+                    <li>
+                        <a href="#">保时捷新闻</a>
+                    </li>
+                </ul>
+            </li>
+            <!-- 关于保时捷 -->
+            <li class="dropD">
+                <a data-trigger="dropD" href="aboutporche.html">关于保时捷</a>
+                <ul class="dropD-menu">
+                    <li>
+                        <div class="sj"></div>
+                        <a href="#">保时捷原则</a>
+                    </li>
+                    <li>
+                        <a href="#">保时捷速览</a>
+                    </li>
+                    <li>
+                        <a href="#">新闻中心</a>
+                    </li>
+                    <li>
+                        <a href="#">工作机会</a>
+                    </li>
+                    <li>
+                        <a href="#">"Christophorus"杂志</a>
+                    </li>
+                    <li>
+                        <a href="#">保时捷博物馆</a>
+                    </li>
+                    <li>
+                        <a href="#">可持续发展</a>
+                    </li>
+                    <li>
+                        <a href="#">Porsche E-Performance</a>
+                    </li>
+                    <li>
+                        <a href="#">服务分支机构</a>
+                    </li>
+                    <li>
+                        <a href="#">关于保时捷中国</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="nav-xs">
+        <div class="left fl">所有车型</div>
+        <div class="right fl">导航</div>
+        <div class="left-nav">
+            <div>prosche 718</div>
+            <div>prosche 911</div>
+            <div>prosche</div>
+            <div>prosche Macan</div>
+            <div>prosche</div>
+            <div>prosche E-</div>
+            <div>prosche 保时捷</div>
+            <div>* 所列的制造商建议零售价（含增值税）仅供参考，并不包括运输费用、税费
+                （另有明确规定的除外）、牌照、所有权、非强制或地区性要求的设备。特别是，
+                制造商建议零售价（含增值税）并未包含 2016 年 12 月 1 日起生效的《财政部、
+                国家税务总局关于对超豪华小汽车加征消费税有关事项的通知》所要求加征的消费
+                税。请向授权经销商咨询具体的价格信息。</div>
+        </div>
+    </div>
+    <div class="floatdiv">
+        <div class="d1">
+            <div>
+                <input type="text" placeholder="城市名">
+                <input type="text" placeholder="输入关键字">
+                <a href="#">车辆配置器</a>
+                <div class="dm"></div>
+                <div class="dm"></div>
+                <div class="dm"></div>
+            </div>
+            <div>
+                <span>工具与服务</span>
+                <div class="dm"></div>
+            </div>
+        </div>
+        <div class="d2"></div>
+    </div>
+    <div id="ff_mask"></div>

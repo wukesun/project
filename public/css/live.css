@@ -1,0 +1,245 @@
+/*div{*/
+    /*border:1px solid red;*/
+/*}*/
+body{
+    margin:0;
+    padding:0;
+
+}
+p{
+    margin: 0;
+    padding: 0;
+}
+.all_bg{width: 1000px;height: 600px;
+    margin: 0 auto}
+.nav{
+    width: 100%;
+    height: 30px;
+    /*background: #1ABB9C;*/
+}
+#allcanvas{
+    position: absolute;
+    width: 800px;height: 450px;
+    margin: 0px;
+    bottom:120px;
+    left:9%;
+    border:2px solid #dddddd;
+}
+#canvas1{
+    position: absolute;
+    top: 0;
+    left:0;
+    width:100%;
+    height:91%;
+    z-index: 1;
+}
+
+#liveVideo{
+    position: absolute;
+    width:100%;
+    height:100%;
+    z-index: 0;
+    top: 0;
+    left: 0;
+
+}
+#chatMain>div:nth-child(2){
+    width: 342px;
+    height: 134px;
+    position: absolute;
+    right:128px;
+    top:627px;
+    border:1px solid #dddddd;
+    border-top:0;
+}
+#chatMain>div:nth-child(2) p:nth-child(2){
+    border:2px solid #dddddd;
+    border-radius: 10%;
+    height: 51px;
+    width: 250px;
+    margin-left:5px;
+    margin-top: 20px;
+}
+#chatMain>div:nth-child(2) p:nth-child(2)>input{
+    outline: none;
+    border-style:none;
+    font-size: 14px;
+    text-align: center;
+    margin-left:34px;
+    margin-top:19px;
+    background: #31363970;
+}
+#chatMain>div:nth-child(2) p:last-child{
+    height: 51px;
+    width: 50px;
+    border-radius: 10%;
+    border:2px solid #dddddd;
+    position: relative;
+    top:-55px;
+    left: 280px;
+    text-align: center;
+    line-height: 49px;
+}
+#chatMain>div:nth-child(2) p:last-child>input{
+    outline: none;
+    border-style:none;
+    background:transparent;
+    color: #8E1119;
+}
+#showbox{
+    position: absolute;
+    top: 25%;
+    right:9%;
+    width: 340px;
+    height:422px;
+    overflow: auto;
+    color: #A50F20;
+    font-size: 20px;
+    font-weight: 200;
+    border:2px solid #dddddd;
+    border-bottom: 0;
+    /*box-shadow:21px 17px 28px -17px #313639;*/
+    /*background: linear-gradient(to bottom,#313639,#313639);*/
+}
+#showbox ul{
+    list-style:none;
+}
+#showbox ul li{
+    border-bottom: 1px solid #d5d5d5;
+    margin-left:-20px;
+    margin-right:20px;
+}
+
+#showinput{
+    position: absolute;
+    top: 83%;
+    right: 9%;
+}
+#showinput p img{
+    width: 340px;
+}
+#vs{
+    width: 800px;
+    height: 100px;
+    border: 2px solid #dddddd;
+    position: absolute;
+    left:9%;
+    top:654px;
+}
+#vs div{
+    height: 100px;
+    margin-left: 20px;
+    float: left;
+    color: #59606f;
+}
+#vs div span{
+    font-size: 14px;
+}
+#vs div:nth-child(2){
+    position: absolute;
+    left: 515px;
+    margin-top:20px;
+}
+#vs div:nth-child(2) img{
+    width: 98px;
+}
+#vs div:nth-child(3){
+    margin-top: 55px;
+}
+#vs div:nth-child(3) img:nth-child(1){
+    position: absolute;
+    top: 50px;
+    right:365px;
+}
+#vs div:nth-child(3) img:nth-child(2){
+    position: absolute;
+    top:57px;
+    right:280px;
+}
+#com{
+    margin:200px 7%;
+    width: 1200px;
+    position: absolute;
+    top: 650px;
+    left: 15px;
+}
+#com div:nth-child(1){
+    border-bottom: 2px solid #d5d5d5;
+    height: 72px;
+    font-size: 24px;
+    padding-top:24px;
+    margin-left: 24px;
+
+}
+#com div #fy{
+    position: absolute;
+    left:950px;
+}
+#com div #fy b{
+    font-size: 18px;
+}
+#com div #fy button{
+    border: none;
+}
+#com div:nth-child(1) span:nth-child(2){
+    position: absolute;
+    right:30px;
+}
+#com div.pl{
+    width: 1050px;
+    border-bottom: 2px solid #d5d5d5;
+    padding: 20px;
+    margin:0 auto;
+}
+#com div.pl h4{
+    color:#59606f;
+}
+#com div.pl p{
+    padding-left: 30px;
+}
+/*pc*/
+
+/*pad*/
+@media screen and (min-width: 768px) and (max-width:991px){
+    #showbox{
+        display: none;
+    }
+    #chatMain>div:last-child{
+        display: none;
+    }
+}
+/*phone*/
+@media screen and (max-width: 767px){
+    #showbox{
+        display: none;
+    }
+    #chatMain>div:last-child{
+        display: none;
+    }
+}
+
+/*登录注册样式*/
+.nav a{
+    text-decoration: none;
+    color: black;
+}
+.nav a:hover{
+    color: red;
+}
+.nav>.LoginRegi{
+    position: relative;
+    top: -15px;
+    left:23%;
+    /*display: none;*/
+}
+.nav>.LoginRegi>span{
+
+}
+
+.nav>.isLogin{
+    position: relative;
+    top: -15px;
+    left:23%;
+    display: none;
+}
+

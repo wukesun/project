@@ -1,0 +1,281 @@
+/*********设置通用样式*****************/
+body{
+    font-family: "Open Sans", Arial, sans-serif;
+    line-height: 1.5;
+    font-size: 16px;
+    color: #848484;
+    margin: 0;
+    padding: 0;
+    background:#f0f0f0;
+}
+p,h1,h2,h3,h4,h5,h6,ul,ol,dl,dd{
+    margin: 0;
+    padding: 0;
+    list-style:none;
+}
+input{
+    outline: none;
+    border-style:none;
+}
+a{
+    color:#000;
+    text-decoration: none;
+}
+a:hover{
+    color:red;
+}
+img{
+    vertical-align:bottom;
+}
+.lf{
+    float:left;
+}
+.rf{
+    float:right;
+}
+.clear:after{
+    display:block;
+    content:"";
+    clear:both;
+}
+/**最大的容器***/
+div.main{
+    width:100%;
+    margin: 0 auto;
+}
+/*login_middle*/
+/*head*/
+div.login_middle_head{
+    width: 100%;
+    margin-top:3%;
+}
+div.login_middle_head>ul{
+    margin: 30px 0 0 42%;
+}
+div.login_middle_head>ul>li{
+    float: left;
+}
+div.login_middle_head>ul>li>a{
+    margin-left:15px;
+    color: #4CC2B6;
+}
+div.login_middle_head>ul>li>a:hover{
+    color:#d2d2d2;
+}
+/*login_middle_body*/
+/*控制整个登录页的显现*/
+div.login_middle_body{
+    width: 100%;
+    margin: auto;
+    text-align: center;/*控制整个登录页的right middle left*/
+}
+div.login_middle_body>div>p:first-child{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 20px;
+    margin: 0 0 30px -51%;
+    padding-top:23px;
+    color: #000000;
+}
+div.login_middle_body>div>p:nth-child(3){
+    margin-top:10%;
+}
+div.login_middle_body>div>p:nth-child(2)>input,div.login_middle_body>div>p:nth-child(3)>input{
+    outline: none;
+    border-style:none;
+    font-size: 16px;
+    color:#B2B2B2;
+    margin-left:-38%;
+}
+div.login_middle_body>div>p:nth-child(2)>b,div.login_middle_body>div>p:nth-child(3)>b{
+    display: block;
+    width: 85%;
+    margin:auto;
+    padding:3% 0;
+    border-bottom: 2px solid #d5d5d5;
+}
+div.login_middle_body>div>p:nth-child(4){
+    margin-top:10%;
+    margin-left:-52%;
+
+}
+div.login_middle_body>div>p:nth-child(5)>b{
+    display: inline-block;
+    position: relative;
+    top: 31px;
+    left: 1%;
+}
+div.login_middle_body>div>p:nth-child(5)>i{
+    display: inline-block;
+    position: relative;
+    top:31px;
+    left:1%;
+}
+div.login_middle_body>div>p:nth-child(6){
+    position: relative;
+    top: 78px;
+    left: 6%;
+    width: 85px;
+    height: 51px;
+    background: #34CCCC;
+    border-radius: 15%;
+    text-align: center;
+    line-height: 48px;
+    box-shadow:-1px  15px 30px -6px  #34CCCC;
+}
+div.login_middle_body>div>p:nth-child(6) a{
+    color:#fff;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+/*pc*/
+@media screen and (min-width: 992px){
+    div.login_middle_body>div{
+        width: 361px;
+        height: 465px;
+        background: #ffff;
+        margin: auto;
+        margin-top:8%;
+        box-shadow:-1px  15px 30px 10px #EAEAEA;
+        /*第一个是水平越大越向右第二是垂直第三是模糊成度第四是距离*/
+    }
+}
+/*pad*/
+@media screen and (min-width: 768px) and (max-width:991px){
+    div.login_middle_body>div{
+        width: 700px;
+        height: 465px;
+        background: #ffff;
+        margin: auto;
+        margin-top:8%;
+        box-shadow:-1px  15px 30px 10px #EAEAEA;
+        /*第一个是水平越大越向右第二是垂直第三是模糊成度第四是距离*/
+    }
+    div.login_middle_body>div>p:nth-child(6){
+        width: 100%;
+        top:49px;
+        left: 3px;
+    }
+}
+/*phone*/
+@media screen and (max-width: 767px){
+    div.login_middle_body>div{
+        width: 91%;
+        height: 465px;
+        background: #ffff;
+        margin: auto;
+        margin-top:8%;
+        box-shadow:-1px  15px 30px 10px #EAEAEA;
+        /*第一个是水平越大越向右第二是垂直第三是模糊成度第四是距离*/
+    }
+    div.login_middle_body>div>p:nth-child(6){
+        top:35px;
+    }
+}
+/*register*/
+div.register_middle_body>div{
+    width: 362px;
+    height: 704px;
+    background: #fff;
+    box-shadow:-1px  15px 30px 15px #EAEAEA;
+    margin-left:69%;
+    margin-top: 50px;
+    position: relative;
+}
+div.register_middle_body>div>p:first-child{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 20px;
+    padding-top:23px;
+    color: #000000;
+    text-align: center;
+}
+div.register_middle_body>div>div.Your{
+    width: 301px;
+    height: 63px;
+    border-radius: 12px;
+    text-align: center;
+    line-height: 57px;
+    margin:auto;
+    color:#3D763E;
+    background: #DFF0D8;
+    box-shadow:-1px 15px 0px -8px #DFF0D8;
+}
+div.register_middle_body>div>p>b{
+    display: block;
+    width: 85%;
+    margin:auto;
+    padding:3% 0;
+    border-bottom: 2px solid #d5d5d5;
+}
+div.register_middle_body>div>p>input{
+    margin-left:28px;
+    margin-top:35px;
+    font-size: 16px;
+
+}
+div.register_middle_body>div>p>b.Me{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 67.5%;
+    left: 17%;
+}
+div.register_middle_body>div>p>i>a.In{
+    display: inline-block;
+    position: absolute;
+    top: 72.5%;
+    left: 51%;
+}
+div.register_middle_body>div>p:last-child{
+    position: relative;
+    top: 42px;
+    left: 6%;
+    width: 85px;
+    height: 51px;
+    background: #34CCCC;
+    border-radius: 15%;
+    text-align: center;
+    line-height: 48px;
+    box-shadow:-1px  15px 30px -6px  #34CCCC;
+}
+
+/*pc*/
+@media screen and (min-width: 992px){
+    div.register_middle_body>div{
+        width: 362px;
+        height: 704px;
+        background: #fff;
+        box-shadow:-1px  15px 30px 15px #EAEAEA;
+        margin-left:69%;
+        margin-top: 50px;
+        position: relative;
+    }
+}
+/*pad*/
+@media screen and (min-width: 768px) and (max-width:991px){
+    div.register_middle_body>div{
+        width: 362px;
+        height: 704px;
+        border:1px solid red;
+        background: #fff;
+        box-shadow:-1px  15px 30px 15px #EAEAEA;
+        margin:auto;
+        margin-top: 50px;
+        position: relative;
+    }
+}
+/*phone*/
+@media screen and (max-width: 767px){
+    div.register_middle_body>div{
+        width: 362px;
+        height: 704px;
+        border:1px solid red;
+        background: #fff;
+        box-shadow:-1px  15px 30px 15px #EAEAEA;
+        margin:auto;
+        margin-top: 50px;
+        position: relative;
+    }
+}

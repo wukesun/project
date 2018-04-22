@@ -1,0 +1,666 @@
+/*四个网页统一的样式*/
+a{
+    text-decoration:none;
+    color:#000000;
+}
+.thumbnail{
+    border:none;
+}
+.clear:after{
+    display:block;
+    content:"";
+    clear:both;
+}
+div.img_XFont>div.tuBiao{
+    position: relative;
+}
+/*<!--图标下的滚动-->*/
+div.img_XFont>div.tuBiao>div.img_guoDong{
+    width: 314px;
+    height: 212px;
+    position: absolute;
+    top: 100%;
+    left:0%;
+    z-index: 15;
+    background: #313639;
+}
+div.img_XFont>div.tuBiao>div.img_guoDong>div>p>a{
+    color:#fff;
+    font-weight: bold;
+    margin-left: 24%;
+    line-height:46px;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+
+div.img_XFont>div.tuBiao>div.img_guoDong>div>p:first-child{
+
+    /*background: #950014;*/
+    width: 100%;
+    height: 64px;
+    border-bottom: 2px solid #d5d5d5;
+}
+div.img_XFont>div.tuBiao>div.img_guoDong>div>p:first-child>a{
+    line-height: 63px;
+    margin-left: 10%;
+}
+div.img_XFont>div.tuBiao>div.img_guoDong>div>p:nth-child(2){
+    width: 100%;
+    height: 60px;
+    margin-top: -10px;
+}
+
+div.img_XFont>div.tuBiao>div.img_guoDong>div>p:nth-child(2)>a>i{
+    display:block;
+    border-bottom: 1px solid #d5d5d5;
+    width: 70%;
+    position: relative;
+    top:4px;
+    left:-8%;
+}
+div.img_XFont>div.tuBiao>div.img_guoDong>div>p:nth-child(2)>a>b{
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    background:url(../img/jiantou2.png)repeat 241px 53%;
+    position: absolute;
+    top:18%;
+    left: 64%;
+}
+div.img_XFont>div.tuBiao>div.img_guoDong>div>p:nth-child(3){
+    width: 100%;
+    height: 60px;
+    margin-top: -10px;
+}
+
+div.img_XFont>div.tuBiao>div.img_guoDong>div>p:nth-child(3)>a>i{
+    display:block;
+    border-bottom: 1px solid #d5d5d5;
+    width: 100%;
+    position: absolute;
+    top:48px;
+    left:-24%;
+}
+div.img_XFont>div.tuBiao>div.img_guoDong>div>p:nth-child(3)>a>b{
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    background:url(../img/jiantou2.png)repeat 241px 53%;
+    position: absolute;
+    top:18%;
+    left: 64%;
+}
+div.img_XFont>div.tuBiao>div.img_guoDong>div>p:nth-child(4)>a>b{
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    background:url(../img/jiantou2.png)repeat 245px 71%;
+    position: absolute;
+    top:18%;
+    left: 63%;
+}
+div.img_XFont>div.tuBiao>div.img_guoDong>div>p:nth-child(4){
+    width: 100%;
+    height: 60px;
+    margin-top: -10px;
+}
+div.img_XFont>h3{
+    font-size: 24px;
+    padding-left:10%;
+    padding-bottom:13px;
+}
+
+/*00_product.html*/
+/*<!--图片下的文字媒体查询-->*/
+/*pc*/
+@media screen and (min-width: 992px){
+    div.img_XFont{
+        width: 100%;
+        padding:2% 0 3% 0;
+        background: #EFF0F1;
+    }
+
+    div.img_XFont>div.tuBiao>div{
+        width: 3.75em;
+        height: 3.75em;
+        margin-left: 10%;
+        background: #950014;
+        position: relative;
+    }
+}
+/*pad*/
+@media screen and (min-width: 768px) and (max-width:991px){
+    div.img_XFont{
+        width: 100%;
+        padding:2% 0 3% 0;
+        background: #EFF0F1;
+    }
+    div.img_XFont>div.tuBiao>div{
+        /*border:1px solid #950014;*/
+        width: 3.75em;
+        height: 3.75em;
+        background: #950014;
+        margin-left: 10%;
+        /*background: #950014;*/
+        position: relative;
+    }
+    div.img_XFont>div.tuBiao>div.img_guoDong{
+        width: 100%;
+        height: 250px;
+    }
+
+}
+/*phone*/
+@media screen and (max-width: 767px){
+    div.img_XFont{
+        width: 100%;
+        padding: 2% 0 3% 0;
+        background: #EFF0F1;
+    }
+    div.img_XFont>div.tuBiao>div{
+        width: 3.75em;
+        height: 3.75em;
+        /*background: #950014;*/
+        background: #950014;
+        position: relative;
+        margin-left: 10%;
+    }
+
+
+}
+div.img_XFont>div.tuBiao>div>span:first-child{
+    display: inline-block;
+    border-bottom: 6px solid #fff;
+    width: 6px;
+    height: 3px;
+    position: absolute;
+    top:10px;
+    left:10px
+}
+div.img_XFont>div.tuBiao>div>span:nth-child(2){
+    display: inline-block;
+    border-bottom: 6px solid #fff;
+    width: 24px;
+    height: 3px;
+    position: absolute;
+    top:10px;
+    left:20px;
+}
+div.img_XFont>div.tuBiao>div>span:nth-child(3){
+    display: inline-block;
+    border-bottom: 6px solid #fff;
+    width: 6px;
+    height: 3px;
+    position: absolute;
+    top:24px;
+    left:10px
+}
+div.img_XFont>div.tuBiao>div>span:nth-child(4){
+    display: inline-block;
+    border-bottom: 6px solid #fff;
+    width: 24px;
+    height: 3px;
+    position: absolute;
+    top:24px;
+    left:20px
+}
+div.img_XFont>div.tuBiao>div>span:nth-child(5){
+    display: inline-block;
+    border-bottom: 6px solid #fff;
+    width: 6px;
+    height: 3px;
+    position: absolute;
+    top:37px;
+    left:10px
+}
+div.img_XFont>div.tuBiao>div>span:nth-child(6){
+    display: inline-block;
+    border-bottom: 6px solid #fff;
+    width: 24px;
+    height: 3px;
+    position: absolute;
+    top:37px;
+    left:20px
+}
+/*<!--图片和文字1-->*/
+div.img_wen1 h2.font_shou2{
+    text-align: center;
+    font-size: 2em;
+    line-height: 45px;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+div.img_wen1 h5.font_yong{
+    font-weight: bold;
+    font-size: 1em;
+    line-height: 178%;
+
+    margin-top: 3%;
+}
+div.img_wen1 a.tukuang{
+    display: inline-block;
+    width: 10em;
+    height: 4em;
+    background: #313639;
+    margin-left: 16%;
+    margin-top: 5%;
+    text-decoration:none;
+    color: #ffffff;
+    font-weight: bold;
+}
+div.img_wen1 a.tukuang:hover{
+    background: #FA0303;
+}
+div.img_wen1 a.tukuang>span:first-child{
+    display: inline-block;
+    width: 16px;
+    height: 21px;
+    margin-left:17%;
+    margin-top: 12%;
+    background:url("../img/jiantou.png") repeat 29% 100%;
+}
+div.img_wen1 a.tukuang>span:last-child{
+    display: inline-block;
+    position: relative;
+    top:-9%;
+    left: 10%;
+}
+/*<!--图片和文字2-->*/
+div.img_wen2 h2.font_pA{
+    text-align: center;
+    font-size: 2em;
+    line-height: 45px;
+    margin-bottom: 24px;
+    -webkit-margin-before: 0.83em;
+    -webkit-margin-after: 0.83em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+div.img_wen2 h5.font_yong{
+    font-weight: bold;
+    font-size: 1em;
+    line-height: 178%;
+    margin-left: 5%;
+    margin-top: 3%;
+}
+div.img_wen2 a.tukuang{
+    display: inline-block;
+    width: 10em;
+    height: 4em;
+    background: #313639;
+    margin-left: 16%;
+    margin-top: 5%;
+    text-decoration:none;
+    color: #ffffff;
+    font-weight: bold;
+}
+div.img_wen2 a.tukuang:hover{
+    background: #FA0303;
+}
+div.img_wen2 a.tukuang>span:first-child{
+    display: inline-block;
+    width: 16px;
+    height: 21px;
+    margin-left: 17%;
+    margin-top: 12%;
+    background:url("../img/jiantou.png") repeat 29% 100%;
+}
+div.img_wen2 a.tukuang>span:last-child{
+    display: inline-block;
+    position: relative;
+    top:-9%;
+    left: 10%;
+}
+/*<!--更多-->*/
+div.geng_duo{
+    width: 100%;
+}
+div.geng_duo>div{
+    text-align: center;
+    line-height: 10px;
+}
+div.geng_duo>div>p{
+    color: #000;
+    font-size: 30px;
+    line-height: 100px;
+    text-align: center;
+}
+div.geng_duo>div>b{
+    display: inline-block;
+    height: 18px;
+    border-right: 2px solid #d5d5d5;
+    margin: 15px 10px 0 10px;
+}
+div.geng_duo>div>a{
+    text-decoration: none;
+    font-size: 19px;
+}
+div.geng_duo>div>a:hover{
+    color:red;
+}
+/*pc*/
+@media screen and (min-width: 992px){
+    div.geng_duo>div>a{
+        display: inline-block;
+        margin-top: 30px;
+    }
+}
+/*pad*/
+@media screen and (min-width: 768px) and (max-width:991px){
+    div.geng_duo>div>a{
+        display: inline-block;
+        margin-top: 30px;
+        text-align: center;
+    }
+}
+/*phone*/
+@media screen and (max-width: 767px){
+    div.geng_duo>div{
+        text-align: center;
+
+    }
+    div.geng_duo>div>a{
+        display: inline-block;
+        margin-top: 50px;
+        text-align: left;
+    }
+    /*div.geng_duo>div>b{*/
+        /*display: none;*/
+    /*}*/
+    div.geng_duo>div>p{
+        font-size: 30px;
+        line-height: 100px;
+
+        text-align: center;
+    }
+}
+/*02_product,html*/
+/*图片和文字*/
+div.font_img div.font_PEE strong{
+    font-weight: normal;
+    font-size: 18px;
+}
+div.font_img div.font_PEE p.font_E{
+    font-size: 16px;
+}
+div.font_img div.font_PEE  span{
+    width: 100%;
+    display: inline-block;
+    overflow:hidden;
+    margin-left: 1%;
+    text-align: left;
+}
+div.font_img div.font_PEE :hover{
+    color:red;
+    cursor: pointer;
+}
+div.font_img div.font_PEE>i{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-left:-2%;
+    margin-top: 1%;
+    background:url("../img/h_jiantou.png")repeat 2% 100%;
+
+}
+div.font_img div.font_PEE {
+
+}
+/*03_product.html*/
+div.font i{
+    display: inline-block;
+    width: 19px;
+    height: 17px;
+    position: relative;
+    left:5%;
+    top: 2em;
+    background:url("../img/h_jiantou.png")repeat 0px 103px;
+}
+div.font div.font-xin a{
+    text-decoration: none;
+}
+div.font div.font-xin a h5:hover{
+    color:red;
+}
+/*04_product.html*/
+div.four_font>div>h3{
+    width: 995px;
+    height: 143px;
+    color:#000;
+    line-height: 48px;
+    margin-left:10%;
+}
+div.four_font>div>p:first-child{
+    font-weight: 100;
+    font-size: 20px;
+    width: 995px;
+    border-bottom:1px solid darkgrey;
+    line-height: 74px;
+    color:darkgrey;
+}
+div.four_font>div:last-child>p{
+    line-height: 140px;
+}
+/*图片和文字2*/
+div.img_font_four>div{
+    transition:all 4s linear;
+    position: relative;
+
+}
+div.img_font_four>div:hover{
+    transform:translate(20px);
+    color:red;
+
+}
+div.img_font_four>div div.four_i{
+    width: 344px;
+    height: 100px;
+    color:#fff;
+    font-weight: bold;
+    line-height: 37px;
+    position: absolute;
+    top: 290px;
+    left: 30px;
+}
+div.img_font_four>div div.four_i>i{
+    display: inline-block;
+    width: 11px;
+    height: 23px;
+    font-size: 28px;
+    color:red;
+    font-weight: bold;
+}
+div.img_font_four>div div.four_i>b{
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 200;
+    margin-left:10px;
+    margin-top: 2px;
+}
+div.img_font_fourT{
+    line-height: 20px;
+}
+div.img_font_fourT>div>p{
+    width: 712px;
+    margin-left:24%;
+    margin-top:105px;
+}
+div.img_font_fourT>div>p>b:first-child,div.img_font_fourT>div>p>b:last-child{
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 200;
+}
+div.img_font_fourT>div>p>b:last-child{
+    color:#D5D5F7;
+}
+
+/*<!--图片和进度条-->*/
+ul,li {
+    list-style: none;
+}
+img {
+    vertical-align: top;
+}
+div.img_gonDongT{
+    width: 100%;
+}
+
+div.img_gonDongT>div{
+    width: 1348px;
+    height:540px;
+    overflow: auto;
+    overflow-y:hidden;
+    margin: auto;
+}
+div.img_gonDongT>div>#img_gonDongT_box>img{
+    float: left;
+    margin: 0 15px;
+}
+div.img_gonDongT>div>#img_gonDongT_box>img:first-child{
+    margin-top: 10px;
+}
+div.img_gonDongT>div>#img_gonDongT_box{
+    width: 4044px;
+    height: 372px;
+    position: relative;
+    position: relative;
+    margin: 0;
+}
+div.img_gonDongT>div>#img_gonDongT_box>p>b:first-child{
+    width: 221px;
+    position: absolute;
+    top: 231px;
+    margin-left: -280px;
+    font-size: 24px;
+    font-weight: 100;
+}
+div.img_gonDongT>div>#img_gonDongT_box>p>b:last-child{
+    width: 282px;
+    position: absolute;
+    top: 268px;
+    margin-left: -280px;
+    line-height: 53px;
+}
+div.four_footer{
+    width: 100%;
+}
+div.four_footer>div{
+    width: 100%;
+    height: 629px;
+    background: #000;
+}
+div.four_footer>div>div:first-child{
+    color:#fff;
+    text-align: center;
+    font-weight: 100;
+    font-size: 41px;
+    line-height: 113px;
+}
+div.four_footer>div>div:nth-child(2)>img{
+    margin-left:93px;
+}
+div.four_footer>div>div:last-child>p:first-child{
+    font-size: 24px;
+    font-weight: 100;
+    margin-left: 53%;
+    margin-top: -410px;
+    color: #FFFFFF;
+}
+div.four_footer>div>div:last-child>p:nth-child(2){
+    margin-left: 53%;
+    padding-top: 23px;
+}
+div.four_footer>div>div:last-child>p:last-child{
+    width: 280px;
+    height: 63px;
+    margin-left: 53%;
+    margin-top: 50px;
+    text-align: center;
+    line-height: 59px;
+    background: #313639;
+    font-weight: bold;
+    font-size: 15px;
+}
+div.four_footer>div>div:last-child>p:last-child:hover{
+    background: #FC0527;
+}
+div.four_footer>div>div:last-child>p:last-child a{
+    color:#fff;
+    text-decoration: none;
+}
+div.four_footer>div>div:last-child>p:last-child b{
+    font-size:32px;
+    color: #FFFFFF;
+    position: relative;
+    top: 5px;
+    left:  -12px;
+}
+/*04媒体查询调整*/
+/*pc*/
+@media screen and (min-width: 992px){
+    div.font div.font-xin a h5,div.font div.font-xin a h4{
+        font-weight: normal;
+        font-size: 1.1em;
+        margin-left: 7em;
+        line-height: 18px;
+    }
+}
+/*pad*/
+@media screen and (min-width: 768px) and (max-width:991px){
+    div.four_footer>div>div:last-child>p:first-child,
+    div.four_footer>div>div:last-child>p:nth-child(2),
+    div.img_font_four>div div.four_i{
+        display: none;
+    }
+    div.four_footer>div>div:last-child>p:last-child{
+       position: relative;
+        top:-35px;
+        left:-23%
+    }
+    div.font div.font-xin a h5{
+        font-weight: normal;
+        font-size: 1.1em;
+        margin-left: 7em;
+        line-height: 18px;
+    }
+}
+/*phone*/
+@media screen and (max-width: 767px){
+    div.four_footer>div>div:last-child>p:last-child{
+        margin-left:0;
+        width:167px;
+        height: 46px;
+        font-size: 10px;
+        line-height: 32px;
+        margin-top:3%;
+    }
+    div.four_footer>div>div:nth-child(2)>img{
+        margin-left:0;
+    }
+    div.four_footer>div>div:last-child>p:first-child,
+    div.four_footer>div>div:last-child>p:nth-child(2),
+    div.img_font_four>div div.four_i{
+        display: none;
+    }
+    div.four_footer>div>div:first-child{
+        font-size: 10px;
+    }
+    div.four_footer>div{
+        height: 600px;
+    }
+    div.font div.font-xin a h5{
+        font-weight: normal;
+        font-size: 1.1em;
+        margin-left: 7em;
+        line-height: 18px;
+    }
+    div.img_XFont h3{
+        position: relative;
+        
+    }
+}
+

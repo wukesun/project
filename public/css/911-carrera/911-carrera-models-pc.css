@@ -1,0 +1,234 @@
+.probe{
+    border:1px solid #e3e4e4;
+    width:90%;
+    margin-left: 5%;
+    padding:4% 0% 4% 5%;
+}
+/*车辆信息*/
+.nature{
+    /*border:1px solid red;*/
+    width:90%;
+    margin-left:5%;
+    margin-top: 1%;
+}
+.nature1{
+    float: left;
+    border:1px solid #e3e4e4;
+    padding: 4% 0% 4% 2%;
+    width:59%;
+}
+.nature2{
+    float: right;
+    padding:4% 0% 4% 2%;
+    border:1px solid #e3e4e4;
+    width:39%;
+}
+/*=====end车辆信息=====*/
+h1{
+    font-size:24px
+}.shuiyong{
+    margin-top: 3%;
+ }
+.gengduo{
+    margin-top:3%;
+}
+.chexinggengduo div{
+    font-size:24px;
+    width:auto;
+    margin-left: 5%;
+    margin-top:3%;
+}
+.cxgd div{
+    float:left;
+}
+.tabs{
+            position: relative;
+        }
+        .tabs ul{
+            position: absolute;
+           width: 100%;
+           text-align: center;
+           margin: 0;
+           padding:0;
+           font-size: 0;  
+        }
+        .tabs ul li:hover{
+            background: #d5001c;
+            cursor: pointer
+        }
+        .tabs ul li{
+            display: inline-block;
+            border-right:1px solid #626669;
+            background:#313639;
+            padding: 8px 18px;
+            font-size:0;   
+        }
+        .tabs ul li:last-child{
+            border: 0;
+        }
+        .tabs ul li a{
+            color: #fff;
+            font-size:14px;
+        }
+		/*车图片转换*/
+		.changeImg{
+			position:relative;
+			width: 788px;
+			height: 476px;
+		}
+		.changeImg>img{
+			position: absolute;
+			top: 0;
+			width: 100%;
+			height: 100%;
+		}
+		.changeImg>img.fade{
+			opacity: 0;
+		}
+		.changeImg>img.active{
+			opacity:1;
+			transition:all linear 1s;
+		}
+		.right{
+			position: relative;
+			left:94%;
+		}
+		.accordion{
+			width: 80%;
+			margin: 0 auto;
+			}
+		.accordion>.title{
+			/*background: #eee;*/
+			border:1px solid #aaa;
+			padding:6px;
+			font-size:1.5em;
+			font-weight:bold;
+			cursor: pointer;
+			width:100%;
+		}
+		.accordion>.content.fade{
+			height: 0;
+			/*opacity: 0;*/
+			/*background: #555;*/
+			border: 1px solid #ccc;
+			border-top: 0;
+			overflow: hidden;
+			transition:all .5s linear;
+		}
+		.accordion>.content.in{
+			height: 100px;
+			opacity: 1;
+			background: #fff;
+		}
+
+		.slick-list{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    margin-top: 8%;
+	width:120%;
+	left:-40px;
+}
+.slick-slide{
+    float:left
+}
+.slick-slide{
+    margin: 0.5%;
+    height:5%;
+	width:15.5%;
+}
+.slick-img >img{
+    display: block;
+	width: 400px;
+	height: 300px;
+}
+.slick-btn{
+    padding: 2% 4%;
+    background-color: #313639;
+    display: inline-block;
+    color: #fff;
+    margin-left: 4%;
+    margin-bottom: 4%;
+    cursor: pointer
+}
+.slick-title{
+    font-size:24px;
+}
+.slick-content{
+    font-size:16px;
+    
+}
+.slick-content,.slick-title{
+    margin: 10px 0px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.slick-btn{
+    margin-top: 10px;
+}
+.slick-btn>span>span{
+    margin: 5px;
+}
+.slick-btn>span{
+    font-size: 15px;
+}
+
+.audio-left-1,.audio-left-2{
+    float:left;
+    width: 50%;
+}
+.audio-left-1> img{
+    width: 100%;
+}
+.audio-left-2 > img {
+    width: 100%;
+}
+.audio-left-3 > img{
+    width: 100%;
+}
+.vidio1{
+    position:absolute;
+    font-size:60px;
+    color:white;
+    cursor: pointer;
+}
+.audio-left-1>.vidio1{
+    left:20%;
+    top:10%;
+}
+.audio-left-2>.vidio1{
+    left:70%;
+    top:10%;
+}
+.audio-left-3>.vidio1{
+    left:43%;
+    top:60%;
+}
+
+.audio-right-1,.audio-right-2{
+    float:left;
+    width: 50%;
+}
+.audio-right-1> img{
+    width: 100%;
+}
+.audio-right-2 > img {
+    width: 100%;
+}
+.audio-right-3 > img{
+    width: 100%;
+}
+.audio-right-1>.vidio1{
+    left:20%;
+    top:74%;
+}
+.audio-right-2>.vidio1{
+    left:70%;
+    top:74%;
+}
+.audio-right-3>.vidio1{
+    left:43%;
+    top:23%;
+}

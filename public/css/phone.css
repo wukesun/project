@@ -1,0 +1,40 @@
+.probe,.nature1,.nature2{
+    border:1px solid #e3e4e4;
+    width:80%;
+    margin-left: 10%;
+    padding:0% 0% 0% 5%;
+}
+/*车辆信息*/
+.nature{
+    /*border:1px solid red;*/
+    /*width:90%;*/
+    /*margin-left:5%;*/
+    /*margin-top: 1%;*/
+}
+.nature1,.nature2{
+    float: left;
+    margin-left:10%;
+    /*border:1px solid #e3e4e4;*/
+    /*width:90%;*/
+}
+/*=====end车辆信息=====*/
+
+.chexinggengduo{
+    font-size: 24px;
+    margin-left:8px;
+    margin-top: 18px;
+    padding: 10px;
+}
+.chexinggengduo div{
+    margin-top: 40px;
+}
+.gengduo{
+    margin-top: 50px;
+}
+.shuiyong{
+    margin-top: 30px
+;
+}
+.tate>div{
+    border-right:none;
+}

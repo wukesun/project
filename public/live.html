@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>live</title>
+    <link rel="stylesheet" href="./css/live.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <style>
+        .logo{
+            position: absolute;
+            top:0px;
+            width: 100px;
+            height: 100px;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="header-box"></div>
+   <div class="nav">
+
+       <div class="LoginRegi">
+           <span><a href="login.html">登录</a></span>
+           <span>||</span>
+           <span><a href="register.html">注册</a></span>
+       </div>
+       <div class="isLogin">
+           <span class="isLoginName">欢迎：</span>
+           <span>||</span>
+           <span class="loginOut"><a href="" >登出</a></span>
+       </div>
+   </div>
+   <div class="all_bg">
+
+       <div id="allcanvas">
+           <video id="liveVideo" controls="controls" loop></video>
+           <!--弹幕-->
+           <canvas id="canvas1" width="320" height="240"></canvas>
+           <!--绘制视频-->
+           <canvas id="canvas2" width="320" height="240"></canvas>
+       </div>
+       <div id="chatMain">
+
+           <div id="showbox">
+               <ul>
+                   <li v-for="item in chatList"><p>{{item}}</p></li>
+               </ul>
+           </div>
+           <div id="showinput">
+               <p><img src="./img/8.png" alt=""></p>
+               <p>
+                   <input type="text" id="msginput" @keyup.enter="sendMsg" v-model="msg" placeholder="发弹幕参与(吊炸天)互动">
+               </p>
+               <p>
+                   <input type="button" @click="sendMsg" value="发送">
+               </p>
+
+           </div>
+           <div id="vs">
+               <div>
+                   <h2>保时捷：打破传统 不断创新</h2>
+                   <h4>本视频由F6独家提供!&nbsp&nbsp&nbsp&nbsp<span>标签：F6 保时捷</span></h4>
+               </div>
+               <div>
+                   <img src="img/7.jpg" alt="">
+                   <img src="img/7.png" alt="">
+               </div>
+               <div>
+                   <img src="img/9.png" alt="">
+                   <img src="img/10.png" alt="">
+
+               </div>
+
+           </div>
+       </div>
+       <div id="com">
+           <div>
+               <span>全部评论</span>
+               <div id="fy">
+                   <b>共X页</b>
+                   <button @click="pageClick('pre')">上一页</button>
+                   <button v-for="page in pageCount"  @click="pageClick(page)">{{ page }}</button>
+                   <button @click="pageClick('next')">下一页</button>
+               </div>
+           </div>
+           <div class="pl">
+               <h2>评论</h2>
+               <span>{{uname}}:</span><input v-model="msg" type="text" placeholder="请输入评论"><button @click="sendMsg">发送评论</button>
+           </div>
+           <div v-for="msg in msgList" class="pl">
+               <h4>{{msg.name}}</h4>
+               <p>{{msg.comment}}</p>
+           </div>
+
+       </div>
+   </div>
+   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+   <script src="./js/jquery.js"></script>
+   <script src="./js/vue.js"></script>
+   <script src="./js/socket.io.js"></script>
+   <script src="./js/live.js"></script>
+    <script src="./js/header.js"></script>
+    <script src="./js/footer.js"></script>
+</body>
+</html>
